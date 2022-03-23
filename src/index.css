@@ -7,7 +7,7 @@
 
 html {
     background-color: #B92BF0;
-    
+    overflow-x: hidden;
 }
 .app {
     display: flex;
@@ -26,6 +26,7 @@ html {
     align-items: center;
     padding: 30px;
     border-radius: 5px;
+    width: 600px;
 }
 .need-login h1 {
     color: lightslategray;
@@ -41,6 +42,13 @@ html {
 }
 .home {
     width: 80%;
+    display: flex;
+    justify-content: center
+}
+@media only screen and (max-width: 600px) {
+    .home {
+        width: 362px;
+    }
 }
 @import "./styles/nav.scss";
 @import "./styles/login.scss";

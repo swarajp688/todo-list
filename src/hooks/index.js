@@ -13,7 +13,7 @@ export const useProvideAuth = ()=> {
     const {addToast}=useToasts();
     
     const signup = (email,password)=>{
-        if(email  || !password ){
+        if(!email  || !password ){
             return addToast("Email password cannot be blank",{
                 autoDismiss:true,
                 appearance:'error'
