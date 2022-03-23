@@ -2,9 +2,14 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 html {
-    background-color: #fff;
+    background-color: #B92BF0;
     
 }
+
+@import "./styles/nav.scss";
+@import "./styles/login.scss";
+@import "./styles/signup.scss"
