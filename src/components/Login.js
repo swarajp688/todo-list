@@ -17,10 +17,18 @@ const Login = () => {
   }
   const handleSubmit = async (e)=>{
     e.preventDefault();
-    console.log(value.password,"value")
+    if(value.email.length < 0 || value.password.length < 0){
+    navigate("/signin");
+      
+      
+    }else {
+      console.log(value.password,"value")
     auth.login(value.email,value.password);
-    auth.
     navigate("/");
+
+    }
+    
+    
   }
   return (
     

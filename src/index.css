@@ -9,7 +9,40 @@ html {
     background-color: #B92BF0;
     
 }
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    
+}
+.need-login {
+    height: 600px;
+    background: #fff;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px;
+    border-radius: 5px;
+}
+.need-login h1 {
+    color: lightslategray;
+}
+.link {
+    text-decoration: none;
+}
+.link:visited {
+    color: #fff
+}
+.link:active {
+    text-decoration: underline;
+}
+.home {
+    width: 80%;
+}
 @import "./styles/nav.scss";
 @import "./styles/login.scss";
-@import "./styles/signup.scss"
+@import "./styles/signup.scss";
+@import "./styles//todos.scss";

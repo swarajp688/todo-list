@@ -15,6 +15,10 @@ const SignUp = () => {
   }
   const handleClick = async(e)=>{
     e.preventDefault();
+    if(value.email.length < 0 || value.password.length < 0){
+      
+      return alert("Email and Password Cannot be Empty")
+    }
     auth.signup(value.email,value.password);
     navigate("/signin");
   }

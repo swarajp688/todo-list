@@ -11,6 +11,9 @@ export const useProvideAuth = ()=> {
     const [user,setuser]= useState(false);
    
     const signup = (email,password)=>{
+        if(email == '' || password == ''){
+            return alert("Email password cannot be blank")
+        }
         localStorage.setItem('Email', email);
         localStorage.setItem('Password', password);
     }
@@ -18,7 +21,9 @@ export const useProvideAuth = ()=> {
         const localEmail = localStorage.getItem("Email");
         const localPassword = localStorage.getItem("Password");
         
-        
+        if(email == '' || password == ''){
+            return alert("Email password cannot be blank")
+        }    
 
         if(localPassword === password || localEmail === email){
             setuser(true);
@@ -31,9 +36,14 @@ export const useProvideAuth = ()=> {
             return alert('correct');
         }
     }
+    const addTodo = (todo)=> {
+        const localTodos=localStorage.getItem('Todos');
+        localStorage.setItem('Todos',[localTodos , todo])
+    }
     return {
         signup,
         login,
         user,
+        addTodo,
     }
 }
