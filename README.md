@@ -1,3 +1,11 @@
+LIVE [DEMO](https://stupendous-figolla-51165e.netlify.app/);
+
+Screenshots:-![Screenshot from 2022-03-23 16-36-22](https://user-images.githubusercontent.com/57672103/159688294-4a7265dc-65d4-4eb5-801c-edf3815a0fd1.png)
+![Screenshot from 2022-03-23 16-36-43](https://user-images.githubusercontent.com/57672103/159688301-d0d6a5dd-9ea3-4df9-a50a-ead92b86e741.png)
+
+![Screenshot from 2022-03-23 16-36-57](https://user-images.githubusercontent.com/57672103/159688310-40f63c91-9b21-4c8a-a293-d34b151c3e96.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
