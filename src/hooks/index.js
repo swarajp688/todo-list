@@ -1,6 +1,7 @@
+/* eslint-disable eqeqeq */
 import { useContext, useState } from "react";
 import { TodoContext } from "../Providers/TodoProvider";
-
+import { useToasts } from "react-toast-notifications";
 
 export const useAuth = ()=> {
     return useContext(TodoContext);
@@ -9,10 +10,14 @@ export const useAuth = ()=> {
 
 export const useProvideAuth = ()=> {
     const [user,setuser]= useState(false);
-   
+    const {addToast}=useToasts();
+    
     const signup = (email,password)=>{
-        if(email == '' || password == ''){
-            return alert("Email password cannot be blank")
+        if(email  || !password ){
+            return addToast("Email password cannot be blank",{
+                autoDismiss:true,
+                appearance:'error'
+            })
         }
         localStorage.setItem('Email', email);
         localStorage.setItem('Password', password);
@@ -21,29 +26,35 @@ export const useProvideAuth = ()=> {
         const localEmail = localStorage.getItem("Email");
         const localPassword = localStorage.getItem("Password");
         
-        if(email == '' || password == ''){
-            return alert("Email password cannot be blank")
+        if(!email || !password){
+            return addToast("Email password cannot be blank",{
+                autoDismiss:true,
+                appearance:'error'
+            })
         }    
 
         if(localPassword === password || localEmail === email){
             setuser(true);
-            return alert('correct password')
+            
         }
 
         if(localPassword !== password || localEmail !== email){
-            return alert('Wrong')
+            return addToast("Wrong Email/Password Combiantion",{
+                autoDismiss:true,
+                appearance:'error'
+            })
         }else {
-            return alert('correct');
+            return addToast("You are Ready to go", {
+                autoDismiss:true,
+                appearance:'success'
+            })
         }
     }
-    const addTodo = (todo)=> {
-        const localTodos=localStorage.getItem('Todos');
-        localStorage.setItem('Todos',[localTodos , todo])
-    }
+    
     return {
         signup,
         login,
         user,
-        addTodo,
+        
     }
 }

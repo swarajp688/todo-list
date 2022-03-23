@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks'
-
+import { useToasts } from 'react-toast-notifications';
 const SignUp = () => {
   const navigate  = useNavigate();
+  const {addToast} = useToasts();
   const auth = useAuth();
   const [value,setValue]=useState({
     email:'',
@@ -15,9 +16,9 @@ const SignUp = () => {
   }
   const handleClick = async(e)=>{
     e.preventDefault();
-    if(value.email.length < 0 || value.password.length < 0){
+    if(!value.email || !value.password){
       
-      return alert("Email and Password Cannot be Empty")
+      return addToast("Email and Password Cannot be Empty",{appearance:'error',autoDismiss:true})
     }
     auth.signup(value.email,value.password);
     navigate("/signin");

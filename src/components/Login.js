@@ -17,12 +17,10 @@ const Login = () => {
   }
   const handleSubmit = async (e)=>{
     e.preventDefault();
-    if(value.email.length < 0 || value.password.length < 0){
+  if(!value.email  || !value.password){
     navigate("/signin");
-      
-      
     }else {
-      console.log(value.password,"value")
+      //console.log(value.password,"value")
     auth.login(value.email,value.password);
     navigate("/");
 
@@ -36,10 +34,10 @@ const Login = () => {
     <div className='login'>
       <h1>Welcome Back!</h1>
       <div className='input-div'>
-        <input type="email" name='email' onChange={handleChange} placeholder='Email'/>
+        <input value={value.email} type="email" name='email' onChange={handleChange} placeholder='Email'/>
       </div>
       <div className='input-div'>
-        <input type="password" name='password' onChange={handleChange} placeholder='Password'/> 
+        <input value={value.password} type="password" name='password' onChange={handleChange} placeholder='Password'/> 
       </div>
       <div className='btn-submit'>
       <button onClick={handleSubmit}>Login</button>
